@@ -1,6 +1,6 @@
 # Mines
 
-## Proejct Creader By Rafael Martini
+## Project Creader By Rafael Martini
 
 > Mines
 
