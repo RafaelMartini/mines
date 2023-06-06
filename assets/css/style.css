@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap");
 :root {
   --primary-color: rgb(39, 39, 73);
   --primary-color-darker: rgb(9, 48, 56);
@@ -13,7 +13,7 @@ body {
   margin: 0;
   padding: 0;
   background: var(--primary-color);
-  font-family: 'Open sans', sans-serif;
+  font-family: "Open sans", sans-serif;
   font-size: 1.3em;
   line-height: 1.5em;
 }
@@ -26,6 +26,7 @@ body {
   border-radius: 1px;
   text-align: center;
   position: relative;
+  opacity: 0.3;
 }
 
 .container::before {
@@ -37,7 +38,13 @@ body {
   bottom: -10px;
   z-index: -1;
   border-radius: inherit;
-  background: radial-gradient(circle at center, #345995, #6b5b95, #b565a7, transparent);
+  background: radial-gradient(
+    circle at center,
+    #345995,
+    #6b5b95,
+    #b565a7,
+    transparent
+  );
 }
 
 .container {
@@ -52,11 +59,9 @@ body {
   border-image-slice: 1;
 }
 
-
-
-
-
-form input, form label, form button {
+form input,
+form label,
+form button {
   display: block;
   width: 100%;
   margin-bottom: 10px;
@@ -93,13 +98,12 @@ form button:hover {
   text-align: center;
 }
 
-
 .btn {
   width: 100%;
   height: 50px;
   font-size: 1em;
   border: none;
-  background:#272749;
+  background: #272749;
   cursor: pointer;
 }
 
@@ -118,17 +122,16 @@ form button:hover {
   margin-top: 50px;
   margin-bottom: 30px;
   position: relative;
+  z-index: 4;
 }
 
 .btn-encontrar-diamantes:hover {
   background: linear-gradient(to right, #9966ff, #00ccff);
 }
 
-
 .btn-encontrar-diamantes.btn-bloqueado {
   cursor: not-allowed;
   pointer-events: none;
-  opacity: 0.5;
 }
 
 .btn-encontrar-diamantes.btn-bloqueado::before {
@@ -143,6 +146,7 @@ form button:hover {
 
 .ia-mines-section {
   position: relative;
+  z-index: 8;
 }
 
 .cronometro-container {
@@ -161,42 +165,6 @@ form button:hover {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   font-weight: bold;
   font-family: Arial, sans-serif;
-}
-
-
-
-.login-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
-.login-container h1 {
-  margin-bottom: 20px;
-}
-
-.login-container form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.login-container input[type="text"],
-.login-container input[type="password"] {
-  padding: 10px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-}
-
-.login-container button {
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  background-color: #007bff;
-  color: #fff;
-  cursor: pointer;
 }
 
 .progress-bar {
@@ -270,9 +238,6 @@ form button:hover {
   justify-content: center;
 }
 
-
-
-
 .popup img {
   margin-bottom: 20px;
   width: 120px; /* Ajuste o tamanho da imagem conforme necessário */
@@ -289,28 +254,40 @@ form button:hover {
   position: relative;
   z-index: 0;
   /* Restante dos estilos... */
+  opacity: 0.4;
 }
 
- /* Estilos para o formulário de login */
- .login-container {
+/* Estilos para o formulário de login */
+.login-container {
   /* Estilos do container de login */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100vh;
   z-index: 999;
-  background: url('path/para/sua/imagem-de-fundo-com-transparencia.png');
+  background: url("path/para/sua/imagem-de-fundo-com-transparencia.png");
   background-size: cover;
-  backdrop-filter: blur(5px); /* Adicione o efeito de desfoque aqui */
-  -webkit-backdrop-filter: blur(5px); /* Suporte para navegadores WebKit */
 }
 
+.login-container .matriz-container {
+  opacity: 1;
+}
+
+.login-container h1 {
+  margin-bottom: 20px;
+}
 
 .login-container form {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .login-container input[type="text"],
@@ -326,11 +303,7 @@ form button:hover {
   padding: 8px 20px;
   border: none;
   border-radius: 4px;
-  background-color: #4CAF50;
+  background-color: #4caf50;
   color: white;
   cursor: pointer;
 }
-
-
-
-

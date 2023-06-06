@@ -26,6 +26,8 @@ const campo24 = document.getElementById("campo24");
 const botaoEncontrar = document.querySelector(".btn-encontrar-diamantes");
 const formularioLogin = document.getElementById("login-form");
 const loginContainer = document.querySelector(".login-container");
+const sectionContainer = document.querySelector(".container");
+const matrizContainer = document.querySelector(".matriz-container");
 
 function login(event) {
   event.preventDefault(); // Evita o comportamento padrão de recarregar a página
@@ -43,7 +45,12 @@ function login(event) {
     formularioLogin.style.display = "none";
     loginContainer.style.background = "none";
     loginContainer.style.backdropFilter = "";
+    loginContainer.style.width = 0;
     loginContainer.style.webkitBackdropFilter = "";
+    loginContainer.style["z-index"]="999";
+    sectionContainer.style.opacity = 1;
+    matrizContainer.style.opacity = 1;
+
 
     // Resto da lógica para mostrar a tela inicial normal
   } else {
