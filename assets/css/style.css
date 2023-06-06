@@ -1,0 +1,336 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap');
+:root {
+  --primary-color: rgb(39, 39, 73);
+  --primary-color-darker: rgb(9, 48, 56);
+}
+
+* {
+  box-sizing: border-box;
+  outline: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--primary-color);
+  font-family: 'Open sans', sans-serif;
+  font-size: 1.3em;
+  line-height: 1.5em;
+}
+
+.container {
+  max-width: 640px;
+  margin: 50px auto;
+  background: var(--primary-color);
+  padding: 20px;
+  border-radius: 1px;
+  text-align: center;
+  position: relative;
+}
+
+.container::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  z-index: -1;
+  border-radius: inherit;
+  background: radial-gradient(circle at center, #345995, #6b5b95, #b565a7, transparent);
+}
+
+.container {
+  max-width: 640px;
+  margin: 50px auto;
+  background: var(--primary-color);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  border: 1px solid;
+  border-image: linear-gradient(to right, #345995, #6b5b95, #b565a7) 1;
+  border-image-slice: 1;
+}
+
+
+
+
+
+form input, form label, form button {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+form input {
+  font-size: 24px;
+  height: 50px;
+  padding: 0 20px;
+}
+
+form input:focus {
+  outline: 1px solid var(--primary-color);
+}
+
+form button {
+  border: none;
+  background: var(--primary-color);
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  height: 50px;
+  cursor: pointer;
+  margin-top: 30px;
+}
+
+form button:hover {
+  background: var(--primary-color-darker);
+}
+
+.campoMines {
+  width: 400px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+
+.btn {
+  width: 100%;
+  height: 50px;
+  font-size: 1em;
+  border: none;
+  background:#272749;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #10074f;
+}
+
+.btn-encontrar-diamantes {
+  display: inline-block;
+  padding: 16px 50px 16px 50px;
+  border: none;
+  border-radius: 5px;
+  color: #ffffff;
+  font-size: 16px;
+  background: linear-gradient(to right, #00ccff, #9966ff);
+  margin-top: 50px;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.btn-encontrar-diamantes:hover {
+  background: linear-gradient(to right, #9966ff, #00ccff);
+}
+
+
+.btn-encontrar-diamantes.btn-bloqueado {
+  cursor: not-allowed;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.btn-encontrar-diamantes.btn-bloqueado::before {
+  content: "\f023"; /* Código do ícone de cadeado do Font Awesome */
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.ia-mines-section {
+  position: relative;
+}
+
+.cronometro-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  color: white;
+  /* padding: 8px; */
+  border-radius: 4px;
+  margin-top: 20px;
+  /* background-color: rgba(183, 0, 255, 0.8); */
+  border: 1px solid rgba(183, 0, 255, 0.8);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-weight: bold;
+  font-family: Arial, sans-serif;
+}
+
+
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.login-container h1 {
+  margin-bottom: 20px;
+}
+
+.login-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.login-container input[type="text"],
+.login-container input[type="password"] {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.login-container button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 20px;
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  margin-top: 10px;
+}
+
+.progress-bar .progress {
+  width: 0%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: progressAnimation 60s linear;
+}
+
+@keyframes progressAnimation {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.progress-bar .stick {
+  width: 5%;
+  height: 100%;
+  background-color: #4caf50;
+  float: left;
+  box-sizing: border-box;
+}
+
+.progress-bar .stick:not(:last-child) {
+  margin-right: 1%;
+}
+
+.progress-bar .stick:last-child {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.popup {
+  width: 420px;
+  height: 470px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  background: linear-gradient(to right, #b700ff, #33077e, #00f2ff);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  border: 1px solid;
+  /* border-image: linear-gradient(to right, #ff6f00, #6b5b95, #b565a7) 1; */
+  border-image-slice: none;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  z-index: 9999;
+  color: white;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+
+.popup img {
+  margin-bottom: 20px;
+  width: 120px; /* Ajuste o tamanho da imagem conforme necessário */
+}
+
+.popup p {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.matriz-container {
+  /* Estilos do container da matriz */
+  position: relative;
+  z-index: 0;
+  /* Restante dos estilos... */
+}
+
+ /* Estilos para o formulário de login */
+ .login-container {
+  /* Estilos do container de login */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 999;
+  background: url('path/para/sua/imagem-de-fundo-com-transparencia.png');
+  background-size: cover;
+  backdrop-filter: blur(5px); /* Adicione o efeito de desfoque aqui */
+  -webkit-backdrop-filter: blur(5px); /* Suporte para navegadores WebKit */
+}
+
+
+.login-container form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-container input[type="text"],
+.login-container input[type="password"] {
+  margin: 5px;
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+}
+
+.login-container button {
+  margin: 5px;
+  padding: 8px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+}
+
+
+
+
